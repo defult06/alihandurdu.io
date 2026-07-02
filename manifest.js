@@ -1,16 +1,29 @@
 window.mediaManifest = {
+
     null: [
-        "images/null/01.jpg",
-        "images/null/02.jpg",
-        "images/null/03.jpg",
-        "video/null/gameplay.mp4"
+        "video/null_lab-video.mp4",
+
+        "images/null_architecture.png",
+        "images/null_book-interaction.png",
+        "images/null_door-interaction.png",
+        "images/null_lab-room.png",
+        "images/null_lab-room-2.png",
+        "images/null_room-interaction.png"
     ],
 
     touchandrun: [
-        "images/touchandrun/01.jpg"
+
     ],
 
     cubeoncube: [
-        "images/cubeoncube/01.jpg"
+
+    ],
+
+    catchmatch: [
+
+    ],
+
+    soloprototypes: [
+
     ]
 };
