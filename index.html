@@ -689,7 +689,7 @@
   // folder in the repo. Videos listed first will show first.
   // Supported video extensions: mp4, webm, mov, ogv
   // ---------------------------------------------------------------
-  const mediaManifest = {
+  const fallbackMediaManifest = {
     null: [
       // "video/null/flashlight-clip.mp4",
       // "images/null/lab-01.jpg",
@@ -708,6 +708,11 @@
       // "images/soloprototypes/01.jpg",
     ],
   };
+
+  function GetMedia(key){
+    const manifest = window.mediaManifest || fallbackMediaManifest;
+    return Array.isArray(manifest[key]) ? manifest[key] : [];
+  }
 
   function isVideoFile(src){ return /\.(mp4|webm|mov|ogv)$/i.test(src); }
 
