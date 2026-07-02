@@ -5,7 +5,6 @@ window.mediaManifest = {
 
         "images/null_architecture.png",
         "images/null_book-interaction.png",
-        "images/null_door-interaction.png",
         "images/null_lab-room.png",
         "images/null_lab-room-2.png",
         "images/null_room-interaction.png"
