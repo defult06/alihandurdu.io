@@ -213,6 +213,15 @@
   .pipe-step h4{ font-family:var(--sans); font-weight:600; font-size:15px; margin-bottom:3px; }
   .pipe-step p{ font-size:13.5px; color:var(--text-dim2); }
 
+  .domain-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .domain-card{ background:var(--panel-2); border:1px solid var(--line); padding:20px; }
+  .domain-tag{
+    display:block; font-family:var(--mono); font-size:10px; text-transform:uppercase;
+    letter-spacing:0.09em; color:var(--amber-dim); margin-bottom:8px;
+  }
+  .domain-card h4{ font-family:var(--sans); font-weight:600; font-size:14.5px; margin-bottom:6px; }
+  .domain-card p{ font-size:13px; color:var(--text-dim2); line-height:1.55; }
+
   /* FEATURED PROJECT */
   .featured{
     background:var(--panel);
@@ -255,7 +264,7 @@
   .proj-card p{ font-size:13.5px; color:var(--text-dim2); }
 
   /* SKILLS */
-  .skill-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  .skill-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
   .skill-col{ background:var(--bg); padding:24px; }
   .skill-col h5{
     font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:0.08em;
@@ -289,7 +298,8 @@
     .featured{ grid-template-columns:1fr; }
     .featured-media{ min-height:200px; border-right:none; border-bottom:1px solid var(--line); }
     .proj-grid{ grid-template-columns:1fr; }
-    .skill-grid{ grid-template-columns:1fr 1fr; }
+    .skill-grid{ grid-template-columns:1fr; }
+    .domain-grid{ grid-template-columns:1fr; }
     .navlinks{ display:none; }
   }
 
@@ -322,7 +332,7 @@
       <h1>I find out<br>where the<br><em>frame time</em><br>goes.</h1>
       <p class="lede">Fifteen years building in Unreal Engine — the last stretch spent tracing CPU/GPU bottlenecks frame by frame on a multiplayer title, and shipping gameplay, animation and back-end systems in Blueprint and C++.</p>
       <div class="hero-cta">
-        <a href="#work" class="btn">SEE THE OPTIMIZATION WORK</a>
+        <a href="#work" class="btn">SEE THE WORK</a>
         <a href="#projects" class="btn ghost">VIEW PROJECTS</a>
       </div>
     </div>
@@ -371,39 +381,57 @@
         <div class="meta">ClockWizard Games · İstanbul (Remote)<br>Feb 2026 — Present</div>
       </div>
       <ul>
-        <li>Technical ownership across gameplay, animation and back-end systems, primarily in Blueprint with C++ contributions.</li>
-        <li>Leading CPU/GPU performance optimization on a multiplayer title using Unreal Insights profiling data.</li>
-        <li>Built and maintained a prioritized, sequential bottleneck list spanning debug overhead, skeletal animation, UI layout, audio and VFX.</li>
+        <li>Technical ownership across gameplay, animation, AI and back-end systems, primarily in Blueprint with C++ contributions.</li>
+        <li>Debug and ship fixes spanning multiplayer networking, UI/UMG flows, rendering and post-process systems, alongside ongoing performance work.</li>
+        <li>Integrate third-party backend services for player data and live-operations support.</li>
+        <li>Lead CPU/GPU performance optimization using Unreal Insights profiling data, prioritizing bottlenecks across animation, UI and rendering.</li>
         <li>Recommended a shader pipeline cache completion gate in the loading-screen system to smooth PSO hitches on level transitions.</li>
       </ul>
 
       <div class="stat-row">
-        <div class="stat"><div class="num">291K+</div><div class="lbl">Physics overlap calls traced to one hand-tool attachment chain</div></div>
-        <div class="stat"><div class="num">7</div><div class="lbl">Bottleneck categories ranked and sequenced for optimization</div></div>
+        <div class="stat"><div class="num">291K+</div><div class="lbl">Physics overlap calls traced and resolved in one system</div></div>
+        <div class="stat"><div class="num">7</div><div class="lbl">System domains owned end to end, gameplay through performance</div></div>
         <div class="stat"><div class="num">GPU</div><div class="lbl">Confirmed bound — profiling-led, not guesswork</div></div>
       </div>
 
       <div class="pipeline">
-        <div class="pipeline-title">Optimization pass order</div>
-        <div class="pipe-step">
-          <div class="pipe-num">01</div>
-          <div><h4>Debug cleanup</h4><p>Stripped PrintString, ChaosDebugDrawComponent and LineBatchComponent overhead left in from development builds.</p></div>
-        </div>
-        <div class="pipe-step">
-          <div class="pipe-num">02</div>
-          <div><h4>Skeletal animation & overlap chain</h4><p>Traced hand tools attached to skeletal meshes generating 291,000+ physics overlap calls per frame.</p></div>
-        </div>
-        <div class="pipe-step">
-          <div class="pipe-num">03</div>
-          <div><h4>UI text layout</h4><p>Reworked UMG bindings in TopInfoWidget and WBP_IntelligenceReport driving unnecessary layout passes.</p></div>
-        </div>
-        <div class="pipe-step">
-          <div class="pipe-num">04</div>
-          <div><h4>Audio occlusion & Metasound</h4><p>Reduced per-frame occlusion trace and Metasound graph overhead.</p></div>
-        </div>
-        <div class="pipe-step">
-          <div class="pipe-num">05</div>
-          <div><h4>VFX monitoring</h4><p>NS_DissolveFire elevated to medium-high priority for its GPU compute cost.</p></div>
+        <div class="pipeline-title">Systems worked across</div>
+        <div class="domain-grid">
+          <div class="domain-card">
+            <span class="domain-tag">Gameplay & AI</span>
+            <h4>Mechanics & NPC behavior</h4>
+            <p>Built and debugged interactive gameplay systems, including AI-driven patrol behavior using Unreal's Environment Query System.</p>
+          </div>
+          <div class="domain-card">
+            <span class="domain-tag">Multiplayer</span>
+            <h4>Networking & replication</h4>
+            <p>Diagnosed and fixed replication issues affecting networked voice communication and session-transition bugs when a host disconnects.</p>
+          </div>
+          <div class="domain-card">
+            <span class="domain-tag">UI / UX</span>
+            <h4>Front-end systems</h4>
+            <p>Implemented and iterated on in-game customization and loading-flow interfaces, fixing visual and layout issues across UMG-driven screens.</p>
+          </div>
+          <div class="domain-card">
+            <span class="domain-tag">Rendering</span>
+            <h4>Post-process & visuals</h4>
+            <p>Tuned post-processing effects and traced a frame-rate drop back to reflective, screen-based materials.</p>
+          </div>
+          <div class="domain-card">
+            <span class="domain-tag">Backend</span>
+            <h4>Live services integration</h4>
+            <p>Integrated third-party backend services for player data and live-operations support.</p>
+          </div>
+          <div class="domain-card">
+            <span class="domain-tag">Stability</span>
+            <h4>Bugs & crash resolution</h4>
+            <p>Resolved compile-blocking errors, crash reports and physics/interaction bugs across core gameplay systems.</p>
+          </div>
+          <div class="domain-card">
+            <span class="domain-tag">Performance</span>
+            <h4>CPU/GPU optimization</h4>
+            <p>Led profiling with Unreal Insights, prioritizing and resolving bottlenecks across animation, UI, audio and VFX systems.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -502,13 +530,14 @@
     </div>
     <div class="skill-grid">
       <div class="skill-col">
-        <h5>Engines & Code</h5>
+        <h5>Engines & Programming</h5>
         <ul>
           <li>Unreal Engine 4/5 (Blueprint & C++)</li>
           <li>Unity (C#)</li>
           <li>OOP, AI programming</li>
           <li>Physics & animation programming</li>
           <li>UMG programming</li>
+          <li>Gameplay programming</li>
         </ul>
       </div>
       <div class="skill-col">
@@ -518,23 +547,16 @@
           <li>CPU/GPU profiling</li>
           <li>Bottleneck analysis & prioritization</li>
           <li>Animation / physics optimization</li>
+          <li>Debugging complex/unfamiliar code</li>
         </ul>
       </div>
       <div class="skill-col">
-        <h5>Production</h5>
+        <h5>Development Practice</h5>
         <ul>
           <li>Mobile game development</li>
           <li>Level prototype programming</li>
-          <li>Metasound mastering</li>
-          <li>GDD writing & gamification</li>
-        </ul>
-      </div>
-      <div class="skill-col">
-        <h5>Tools</h5>
-        <ul>
-          <li>Photoshop, CorelDRAW</li>
-          <li>Canva, video editing</li>
-          <li>EzCad</li>
+          <li>Technical ownership across gameplay, animation & back-end</li>
+          <li>Distributed / remote team workflow</li>
         </ul>
       </div>
     </div>
