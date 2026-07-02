@@ -689,7 +689,7 @@
   // folder in the repo. Videos listed first will show first.
   // Supported video extensions: mp4, webm, mov, ogv
   // ---------------------------------------------------------------
-  const mediaManifest = {
+  const fallbackMediaManifest = {
     null: [
       // "video/null/flashlight-clip.mp4",
       // "images/null/lab-01.jpg",
@@ -709,6 +709,11 @@
     ],
   };
 
+  function getMedia(key){
+    const manifest = window.mediaManifest || fallbackMediaManifest;
+    return Array.isArray(manifest[key]) ? manifest[key] : [];
+  }
+
   function isVideoFile(src){ return /\.(mp4|webm|mov|ogv)$/i.test(src); }
 
   function renderMediaInto(container, src){
@@ -725,7 +730,7 @@
   }
 
   function initGallery(key, mountEl){
-    const items = GetMedia(key);
+    const items = getMedia(key);
     if(items.length === 0){
       if(mountEl.classList.contains('proj-thumb')) mountEl.style.display = 'none';
       return;
@@ -758,14 +763,14 @@
   let lightboxState = { key:null, idx:0 };
 
   function openLightbox(key, idx){
-    const items = GetMedia(key);
+    const items = getMedia(key);
     if(items.length === 0) return;
     lightboxState = { key, idx };
     document.getElementById('lightbox').classList.add('open');
     renderLightbox();
   }
   function renderLightbox(){
-    const items = GetMedia(lightboxState.key);
+    const items = getMedia(lightboxState.key);
     renderMediaInto(document.getElementById('lightbox-content'), items[lightboxState.idx]);
     document.getElementById('lightbox-count').textContent = (lightboxState.idx+1) + ' / ' + items.length;
   }
@@ -774,7 +779,7 @@
     document.getElementById('lightbox-content').innerHTML = '';
   }
   function lightboxNav(delta){
-    const items = GetMedia(lightboxState.key);
+    const items = getMedia(lightboxState.key);
     if(items.length === 0) return;
     lightboxState.idx = (lightboxState.idx + delta + items.length) % items.length;
     renderLightbox();
