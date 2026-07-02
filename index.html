@@ -214,6 +214,7 @@
   .pipe-step p{ font-size:13.5px; color:var(--text-dim2); }
 
   .domain-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .domain-grid.cols-2{ grid-template-columns:repeat(2,1fr); }
   .domain-card{ background:var(--panel-2); border:1px solid var(--line); padding:20px; }
   .domain-tag{
     display:block; font-family:var(--mono); font-size:10px; text-transform:uppercase;
@@ -300,6 +301,7 @@
     .proj-grid{ grid-template-columns:1fr; }
     .skill-grid{ grid-template-columns:1fr; }
     .domain-grid{ grid-template-columns:1fr; }
+    .domain-grid.cols-2{ grid-template-columns:1fr; }
     .navlinks{ display:none; }
   }
 
@@ -329,8 +331,8 @@
   <section class="hero" style="border-bottom:none; padding-bottom:0;">
     <div>
       <div class="eyebrow">Game Programmer — Unreal Engine Specialist</div>
-      <h1>I find out<br>where the<br><em>frame time</em><br>goes.</h1>
-      <p class="lede">Fifteen years building in Unreal Engine — the last stretch spent tracing CPU/GPU bottlenecks frame by frame on a multiplayer title, and shipping gameplay, animation and back-end systems in Blueprint and C++.</p>
+      <h1>I build the<br>systems <em>and</em><br>make them<br>run.</h1>
+      <p class="lede">Fifteen years in Unreal Engine, across animation, gameplay, AI and performance — from procedural foot IK and AI state machines to tracing a frame drop down to its call stack.</p>
       <div class="hero-cta">
         <a href="#work" class="btn">SEE THE WORK</a>
         <a href="#projects" class="btn ghost">VIEW PROJECTS</a>
@@ -384,7 +386,7 @@
         <li>Technical ownership across gameplay, animation, AI and back-end systems, primarily in Blueprint with C++ contributions.</li>
         <li>Debug and ship fixes spanning multiplayer networking, UI/UMG flows, rendering and post-process systems, alongside ongoing performance work.</li>
         <li>Integrate third-party backend services for player data and live-operations support.</li>
-        <li>Lead CPU/GPU performance optimization using Unreal Insights profiling data, prioritizing bottlenecks across animation, UI and rendering.</li>
+        <li>Lead CPU/GPU performance optimization — profiling with Unreal Insights and direct process attachment across Debug, PlayTest and Shipping builds to trace issues at the call-stack and thread level, frame by frame.</li>
         <li>Recommended a shader pipeline cache completion gate in the loading-screen system to smooth PSO hitches on level transitions.</li>
       </ul>
 
@@ -430,7 +432,7 @@
           <div class="domain-card">
             <span class="domain-tag">Performance</span>
             <h4>CPU/GPU optimization</h4>
-            <p>Led profiling with Unreal Insights, prioritizing and resolving bottlenecks across animation, UI, audio and VFX systems.</p>
+            <p>Led CPU and GPU profiling across Debug, PlayTest and Shipping builds — attaching directly to process to inspect call stacks and threads, and tracing issues frame by frame down to source.</p>
           </div>
         </div>
       </div>
@@ -491,9 +493,44 @@
           <span class="tag">Nanite</span>
         </div>
         <h3>Null</h3>
-        <p>An FPS detective-thriller in active development since 2023, built solo in C++ and Blueprint on Unreal Engine 5. Uses Lumen and Nanite to push lighting and geometric detail, serving as an ongoing testbed for gameplay systems, mystery-driven level design and current-gen rendering technology.</p>
+        <p>An FPS detective-thriller in active development since 2023, built solo in C++ and Blueprint on Unreal Engine 5. Roughly 150 source files across AI, animation, gameplay and architecture — a full-stack testbed, not just a rendering-tech demo.</p>
       </div>
     </div>
+
+    <div class="pipeline" style="margin-top:32px;">
+      <div class="pipeline-title">Systems inside Null</div>
+      <div class="domain-grid">
+        <div class="domain-card">
+          <span class="domain-tag">AI & Behavior</span>
+          <h4>Polymorphic enemy hierarchy</h4>
+          <p>Three enemy types share one base class and a common interface contract, so adding a new enemy means extending one class rather than rewriting behavior per-enemy.</p>
+        </div>
+        <div class="domain-card">
+          <span class="domain-tag">Animation</span>
+          <h4>Procedural foot & hand IK</h4>
+          <p>Native C++ AnimInstance drives surface-aware footstep audio across 16 materials, runtime foot locking, and contextual hand IK for in-hand object interaction.</p>
+        </div>
+        <div class="domain-card">
+          <span class="domain-tag">Gameplay Systems</span>
+          <h4>Layered player state machine</h4>
+          <p>Stance, movement speed, fear level and mood run as independent but linked state layers, surfaced live through a HUD indicator that shifts as mental state changes, driving animation and gameplay reactions in real time.</p>
+        </div>
+        <div class="domain-card">
+          <span class="domain-tag">Narrative & Dialogue</span>
+          <h4>Data-driven dialogue with subtitles</h4>
+          <p>DataTable-driven conversation rows carry audio cues, timing and subtitle text, with rows able to trigger gameplay functions directly — chaining dialogue into cinematics and level transitions without hardcoding it in Blueprint.</p>
+        </div>
+        <div class="domain-card">
+          <span class="domain-tag">Interaction & Lighting</span>
+          <h4>Context prompts & dynamic flashlight</h4>
+          <p>Context-sensitive interaction prompts (read, open) and a handheld dynamic light system, built with a hybrid Blueprint-and-C++ workflow — C++ for the underlying logic, Blueprint for rapid iteration on feel.</p>
+        </div>
+        <div class="domain-card">
+          <span class="domain-tag">Architecture</span>
+          <h4>Interface-driven systems</h4>
+          <p>Nine separate interfaces decouple AI, weapons, interaction, HUD and narrative systems. Content is organized into clear functional folders rather than a flat dump, keeping the project navigable as it grows.</p>
+        </div>
+      </div>
 
     <div style="margin-top:40px;">
       <div class="pipeline-title" style="margin-bottom:18px;">Other Projects</div>
