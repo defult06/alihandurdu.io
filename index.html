@@ -12,7 +12,7 @@
     --bg:#0E1012;
     --panel:#16181B;
     --panel-2:#1C1F23;
-    --text:#E9E6DE; 
+    --text:#E9E6DE;
     --text-dim:#96979d;
     --text-dim2:#6E706C;
     --amber:#C99A3B;
@@ -38,7 +38,6 @@
     outline:2px solid var(--amber);
     outline-offset:3px;
   }
-
   /* subtle film-grain / vignette atmosphere */
   body::before{
     content:"";
@@ -48,9 +47,7 @@
     pointer-events:none;
     z-index:0;
   }
-
   .wrap{ max-width:1180px; margin:0 auto; padding:0 32px; position:relative; z-index:1; }
-
   .eyebrow{
     font-family:var(--mono);
     font-size:12px;
@@ -58,7 +55,6 @@
     text-transform:uppercase;
     color:var(--amber);
   }
-
   /* NAV */
   header{
     position:sticky; top:0; z-index:50;
@@ -79,7 +75,6 @@
   .logo span{ color:var(--amber); }
   .navlinks{ display:flex; gap:28px; font-family:var(--mono); font-size:13px; color:var(--text-dim2); }
   .navlinks a:hover{ color:var(--amber); }
-
   /* HERO */
   .hero{
     padding:88px 0 96px;
@@ -121,7 +116,6 @@
   .btn:hover{ background:var(--amber); color:#0E1012; border-color:var(--amber); }
   .btn.ghost{ border-color:var(--line); color:var(--text-dim); }
   .btn.ghost:hover{ background:var(--panel-2); color:var(--text); border-color:var(--text-dim2); }
-
   /* PROFILER PANEL (signature element) */
   .profiler{
     background:var(--panel);
@@ -164,7 +158,6 @@
     margin-top:16px; padding-top:12px; border-top:1px solid var(--line);
     font-family:var(--mono); font-size:11px; color:var(--text-dim2);
   }
-
   /* SECTION SHELL */
   section{ padding:88px 0; border-bottom:1px solid var(--line); }
   .section-head{ margin-bottom:44px; }
@@ -173,7 +166,6 @@
     font-size:clamp(28px, 3.4vw, 42px);
     margin-top:8px;
   }
-
   /* EXPERIENCE */
   .role-card{
     background:var(--panel);
@@ -191,16 +183,14 @@
   .role-card li::before{
     content:"→"; position:absolute; left:0; color:var(--amber-dim); font-family:var(--mono);
   }
-
   .stat-row{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:24px;
+    display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:24px;
   }
   .stat{
     background:var(--panel-2); border:1px solid var(--line); padding:20px;
   }
   .stat .num{ font-family:var(--display); font-weight:800; font-size:30px; color:var(--amber); line-height:1; }
   .stat .lbl{ font-family:var(--mono); font-size:11px; color:var(--text-dim2); margin-top:8px; text-transform:uppercase; letter-spacing:0.05em; }
-
   /* pipeline / sequence */
   .pipeline{ margin-top:36px; }
   .pipeline-title{ font-family:var(--mono); font-size:12px; color:var(--text-dim2); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:18px; }
@@ -212,7 +202,6 @@
   .pipe-num{ font-family:var(--mono); color:var(--amber-dim); font-size:14px; }
   .pipe-step h4{ font-family:var(--sans); font-weight:600; font-size:15px; margin-bottom:3px; }
   .pipe-step p{ font-size:13.5px; color:var(--text-dim2); }
-
   .domain-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
   .domain-grid.cols-2{ grid-template-columns:repeat(2,1fr); }
   .domain-card{ background:var(--panel-2); border:1px solid var(--line); padding:20px; }
@@ -222,7 +211,6 @@
   }
   .domain-card h4{ font-family:var(--sans); font-weight:600; font-size:14.5px; margin-bottom:6px; }
   .domain-card p{ font-size:13px; color:var(--text-dim2); line-height:1.55; }
-
   /* FEATURED PROJECT */
   .featured{
     background:var(--panel);
@@ -252,7 +240,6 @@
   }
   .featured-body h3{ font-family:var(--display); font-weight:800; font-size:32px; }
   .featured-body p{ color:var(--text-dim); font-size:15px; margin-top:14px; }
-
   /* OTHER PROJECTS GRID */
   .proj-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
   .proj-card{
@@ -263,14 +250,12 @@
   .proj-card .yr{ font-family:var(--mono); font-size:11px; color:var(--text-dim2); }
   .proj-card h4{ font-family:var(--display); font-weight:700; font-size:20px; margin:8px 0 10px; }
   .proj-card p{ font-size:13.5px; color:var(--text-dim2); }
-
   /* PROJECT THUMBNAILS */
   .proj-thumb{
     width:100%; aspect-ratio:16/10; margin-bottom:14px;
     background:var(--bg); border:1px solid var(--line); cursor:zoom-in; overflow:hidden;
   }
   .proj-thumb img, .proj-thumb video{ width:100%; height:100%; object-fit:cover; display:block; }
-
   /* GALLERY (inside featured-media) */
   .gallery-main{
     width:100%; height:100%; cursor:zoom-in;
@@ -290,7 +275,6 @@
     position:absolute; bottom:10px; right:12px; font-family:var(--mono); font-size:11px;
     color:var(--text-dim); background:rgba(14,16,18,0.75); padding:3px 8px; z-index:5;
   }
-
   /* LIGHTBOX */
   .lightbox{
     position:fixed; inset:0; background:rgba(6,7,8,0.95); z-index:200;
@@ -316,9 +300,8 @@
     position:absolute; bottom:20px; left:50%; transform:translateX(-50%);
     font-family:var(--mono); font-size:12px; color:var(--text-dim2);
   }
-
   /* SKILLS */
-  .skill-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  .skill-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
   .skill-col{ background:var(--bg); padding:24px; }
   .skill-col h5{
     font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:0.08em;
@@ -327,7 +310,6 @@
   .skill-col ul{ list-style:none; }
   .skill-col li{ font-size:13.5px; color:var(--text-dim); padding:5px 0; border-top:1px solid var(--panel-2); }
   .skill-col li:first-child{ border-top:none; }
-
   /* ABOUT aside */
   .about-grid{ display:grid; grid-template-columns:1fr 300px; gap:56px; }
   .about-grid p{ color:var(--text-dim); font-size:16px; margin-bottom:16px; max-width:640px; }
@@ -336,7 +318,6 @@
   .aside-box .row{ display:flex; justify-content:space-between; font-size:13.5px; padding:7px 0; border-top:1px solid var(--panel-2); color:var(--text-dim); }
   .aside-box .row:first-of-type{ border-top:none; }
   .aside-box .row b{ color:var(--text); font-weight:500; }
-
   /* FOOTER */
   footer{ padding:64px 0 40px; }
   .foot-grid{ display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px; }
@@ -344,7 +325,6 @@
   .foot-links{ display:flex; gap:20px; font-family:var(--mono); font-size:13px; }
   .foot-links a{ color:var(--amber); border-bottom:1px solid var(--amber-dim); padding-bottom:2px; }
   .foot-note{ font-family:var(--mono); font-size:11px; color:var(--text-dim2); margin-top:40px; padding-top:20px; border-top:1px solid var(--line); }
-
   @media (max-width: 860px){
     .hero{ grid-template-columns:1fr; padding-top:56px; }
     .about-grid{ grid-template-columns:1fr; }
@@ -357,7 +337,6 @@
     .domain-grid.cols-2{ grid-template-columns:1fr; }
     .navlinks{ display:none; }
   }
-
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
     .bar-fill{ transition:none; }
@@ -365,7 +344,6 @@
 </style>
 </head>
 <body>
-
 <header>
   <nav class="wrap">
     <div class="logo">AL<span>İ</span>HAN DURDU</div>
@@ -377,9 +355,7 @@
     </div>
   </nav>
 </header>
-
 <main class="wrap">
-
   <!-- HERO -->
   <section class="hero" style="border-bottom:none; padding-bottom:0;">
     <div>
@@ -391,13 +367,11 @@
         <a href="#projects" class="btn ghost">VIEW PROJECTS</a>
       </div>
     </div>
-
     <div class="profiler" id="profiler">
       <div class="profiler-head">
         <span>bottleneck_priority.log</span>
         <span class="live">● GPU-BOUND</span>
       </div>
-
       <div class="bar-row" data-w="88">
         <div class="bar-label"><b>01 · Debug draw cleanup</b><span>PrintString / ChaosDebugDraw</span></div>
         <div class="bar-track"><div class="bar-fill"></div></div>
@@ -418,37 +392,35 @@
         <div class="bar-label"><b>05 · VFX compute cost</b><span>NS_DissolveFire</span></div>
         <div class="bar-track"><div class="bar-fill"></div></div>
       </div>
-
       <div class="profiler-foot">Prioritized from Unreal Insights capture · sequential pass, highest cost first</div>
     </div>
   </section>
-
   <!-- WORK / EXPERIENCE -->
   <section id="work">
     <div class="section-head">
       <div class="eyebrow">Experience</div>
       <h2>Where the work happens</h2>
     </div>
-
     <div class="role-card">
       <div class="role-top">
         <h3>Software Development Specialist</h3>
         <div class="meta">ClockWizard Games · İstanbul (Remote)<br>Feb 2026 — Present</div>
       </div>
       <ul>
+        <li>Contributed to two of ClockWizard's shipped titles — Demonologist and Night Club Simulator — both live on Steam.</li>
         <li>Technical ownership across gameplay, animation, AI and back-end systems, primarily in Blueprint with C++ contributions.</li>
         <li>Debug and ship fixes spanning multiplayer networking, UI/UMG flows, rendering and post-process systems, alongside ongoing performance work.</li>
         <li>Integrate PlayFab backend services for player data and live-operations support.</li>
         <li>Lead CPU/GPU performance optimization — profiling with Unreal Insights and direct process attachment across Debug, PlayTest and Shipping builds to trace issues at the call-stack and thread level, frame by frame.</li>
+        <li>Case in point: re-profiled a live in-game CCTV camera system and cut its RenderViewFamily cost from 23.4ms to 4.2–4.7ms and InitViews from 21ms to 0.5–0.6ms (≈39ms combined) via capture-interval gating, an HDR-to-LDR capture switch, a view-distance cap, and proximity-based render toggling.</li>
         <li>Recommended a shader pipeline cache completion gate in the loading-screen system to smooth PSO hitches on level transitions.</li>
       </ul>
-
       <div class="stat-row">
         <div class="stat"><div class="num">291K+</div><div class="lbl">Physics overlap calls traced and resolved in one system</div></div>
         <div class="stat"><div class="num">7</div><div class="lbl">System domains owned end to end, gameplay through performance</div></div>
         <div class="stat"><div class="num">GPU</div><div class="lbl">Confirmed bound — profiling-led, not guesswork</div></div>
+        <div class="stat"><div class="num">~39ms</div><div class="lbl">Frame time recovered from one camera subsystem (RenderViewFamily 23.4ms→4.2ms)</div></div>
       </div>
-
       <div class="pipeline">
         <div class="pipeline-title">Systems worked across</div>
         <div class="domain-grid">
@@ -490,18 +462,20 @@
         </div>
       </div>
     </div>
-
     <div class="role-card">
       <div class="role-top">
-        <h3>Game Developer — Indie Group</h3>
-        <div class="meta">Hibrit Games · Ankara<br>2022 — 2024</div>
+        <h3>Game Developer</h3>
+        <div class="meta">Hibrit Games (Indie Group) · Ankara<br>2022 — 2024</div>
       </div>
       <ul>
         <li>Collaborative development within an independent studio group alongside solo project work.</li>
+        <li>On Amaranths, a co-op survival prototype: built a networked squad-AI framework — a group-coordinator component syncing shared alert/investigate state across Soldier and Scientist AI factions, plus a replicated cover-actor system for tactical positioning.</li>
+        <li>Implemented server-authoritative combat and inventory — replicated weapon firing, aim state and crosshair-spread feedback, and a networked inventory with server-validated add/remove/swap operations.</li>
+        <li>Built a two-stage crafting pipeline (herb gathering → vaccine synthesis) with drag-and-drop UI and progress-bar-driven crafting stations.</li>
+        <li>Added a Scientist-specific AI attention/detection meter (a color-escalating progress-bar UI) and a replicated player ability — a teleport skill with VFX/audio cues and a temporary invulnerability window.</li>
       </ul>
     </div>
   </section>
-
   <!-- ABOUT -->
   <section id="about">
     <div class="section-head">
@@ -526,14 +500,12 @@
       </div>
     </div>
   </section>
-
   <!-- FEATURED PROJECT -->
   <section id="projects">
     <div class="section-head">
       <div class="eyebrow">Featured Project</div>
       <h2>Null</h2>
     </div>
-
     <div class="featured">
       <div class="featured-media" data-gallery="null">
         <span>[ ADD SCREENSHOT / GAMEPLAY CLIP HERE ]</span>
@@ -549,7 +521,6 @@
         <p>An FPS detective-thriller in active development since 2023, built solo in C++ and Blueprint on Unreal Engine 5. Roughly 150 source files across AI, animation, gameplay and architecture — a full-stack testbed, not just a rendering-tech demo.</p>
       </div>
     </div>
-
     <div class="pipeline" style="margin-top:32px;">
       <div class="pipeline-title">Systems inside Null</div>
       <div class="domain-grid">
@@ -585,7 +556,6 @@
         </div>
       </div>
     </div>
-
     <div style="margin-top:40px;">
       <div class="pipeline-title" style="margin-bottom:18px;">Other Projects</div>
       <div class="proj-grid">
@@ -616,7 +586,6 @@
       </div>
     </div>
   </section>
-
   <!-- SKILLS -->
   <section>
     <div class="section-head">
@@ -652,13 +621,23 @@
           <li>Level prototype programming</li>
           <li>Technical ownership across gameplay, animation & back-end</li>
           <li>Distributed / remote team workflow</li>
+          <li>Build packaging & hands-on testing (Debug/PlayTest/Shipping)</li>
+          <li>QA bug-tracking ownership</li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <h5>Version Control & Collaboration</h5>
+        <ul>
+          <li>Perforce (P4V) and SVN in professional pipelines</li>
+          <li>ClickUp task tracking</li>
+          <li>Cross-discipline communication (design/art/production)</li>
+          <li>Weekly coaching/review cycles with daily work logging</li>
+          <li>Active participant in an internal mentorship program</li>
         </ul>
       </div>
     </div>
   </section>
-
 </main>
-
 <footer class="wrap" id="contact">
   <div class="section-head">
     <div class="eyebrow">Contact</div>
@@ -672,7 +651,6 @@
   </div>
   <div class="foot-note">Alihan Durdu — Game Developer, Unreal Engine Specialist. Aydın / İstanbul, Türkiye. https://www.linkedin.com/in/alihandurdu/ </div>
 </footer>
-
 <div class="lightbox" id="lightbox" onclick="if(event.target===this) closeLightbox()">
   <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
   <button class="lightbox-arrow prev" onclick="lightboxNav(-1)" aria-label="Previous">‹</button>
@@ -680,10 +658,8 @@
   <button class="lightbox-arrow next" onclick="lightboxNav(1)" aria-label="Next">›</button>
   <div class="lightbox-count" id="lightbox-count"></div>
 </div>
-
 <script src="manifest.js"></script>
 <script>
-
   // MEDIA MANIFEST — add a filename here whenever you upload a new
   // image or video to the images/<project>/ or video/<project>/
   // folder in the repo. Videos listed first will show first.
@@ -708,14 +684,11 @@
       // "images/soloprototypes/01.jpg",
     ],
   };
-
   function getMedia(key){
     const manifest = window.mediaManifest || fallbackMediaManifest;
     return Array.isArray(manifest[key]) ? manifest[key] : [];
   }
-
   function isVideoFile(src){ return /\.(mp4|webm|mov|ogv)$/i.test(src); }
-
   function renderMediaInto(container, src){
     container.innerHTML = '';
     if(isVideoFile(src)){
@@ -728,7 +701,6 @@
       container.appendChild(img);
     }
   }
-
   function initGallery(key, mountEl){
     const items = getMedia(key);
     if(items.length === 0){
@@ -745,23 +717,19 @@
     `;
     const mainEl = mountEl.querySelector('.gallery-main');
     const countEl = mountEl.querySelector('.gallery-count');
-
     function show(i){
       idx = (i + items.length) % items.length;
       renderMediaInto(mainEl, items[idx]);
       if(countEl) countEl.textContent = (idx+1) + ' / ' + items.length;
     }
     show(0);
-
     mainEl.addEventListener('click', () => openLightbox(key, idx));
     const prevBtn = mountEl.querySelector('.prev');
     const nextBtn = mountEl.querySelector('.next');
     if(prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); show(idx-1); });
     if(nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); show(idx+1); });
   }
-
   let lightboxState = { key:null, idx:0 };
-
   function openLightbox(key, idx){
     const items = getMedia(key);
     if(items.length === 0) return;
@@ -790,7 +758,6 @@
     if(e.key === 'ArrowLeft') lightboxNav(-1);
     if(e.key === 'ArrowRight') lightboxNav(1);
   });
-
   // Animate profiler bars on load + init all galleries
   window.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.bar-row').forEach((row, i) => {
@@ -803,6 +770,5 @@
     });
   });
 </script>
-
 </body>
 </html>
